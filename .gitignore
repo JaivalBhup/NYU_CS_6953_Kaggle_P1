@@ -1,2 +1,6 @@
 data/
 .DS_Store
+.ipynb_checkpoints
+./model_save
+venv
+__pycache__
