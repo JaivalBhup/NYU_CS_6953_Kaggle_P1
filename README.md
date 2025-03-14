@@ -10,7 +10,7 @@ The training pipeline automatically downloads CIFAR-10, preprocesses the data, t
 ---
 ## Repository
 - models.py: ResNet model architechture
-- main.py: File to train and test the mode
+- main.py: File to train and test the model
 - Python Notebooks: Folder containing .ipynb files
 
 --- 
