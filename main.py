@@ -142,7 +142,7 @@ model, train_loss, val_loss, train_accuracies, val_accuracies = train_model(mode
 
 # Save the model
 os.mkdir(model_save_path)
-torch.save(model.state_dict(), os.path.join(model_save_path,'/SE_ResNet_4_4_3.pth'))
+torch.save(model.state_dict(), os.path.join(model_save_path,'SE_ResNet_4_4_3.pth'))
 
 # Plot the loss and accuracy
 fig, ax = plt.subplots(1,2,figsize=(10,4))
