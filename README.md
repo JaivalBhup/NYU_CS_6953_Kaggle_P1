@@ -61,6 +61,8 @@ Below is the summary of the key hyperparameters used in training:
 | Nesterov                  | True                           |
 | Lookahead                 | False                          |
 | Momentum                  | 0.9                            |
+| Label Smoothing           | 0.1                            |
+| Gradient Clipping         | 1                              |
 | Learning Rate (LR)        | 0.1                            |
 | LR Scheduler              | CosineAnnealing, η_min=0.0001  |
 | Weight Decay              | 0.0005                         |
