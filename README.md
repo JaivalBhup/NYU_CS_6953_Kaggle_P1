@@ -1,6 +1,6 @@
-# CIFAR-10 Image Classification with ResNet and SE Blocks
+## CIFAR-10 Image Classification with ResNet and SE Blocks
 This repository is the the submission for the NYU CS 6953 Project 1
----
+
 ## Introduction
 
 This project implements a **ResNet-based model** enhanced with **Squeeze-and-Excitation (SE) Blocks** for image classification on the **CIFAR-10 dataset**. The model is trained using **SGD with Nesterov momentum**, **Cosine Annealing learning rate scheduling**, and **Kaiming weight initialization** to improve convergence and accuracy.
@@ -8,7 +8,12 @@ This project implements a **ResNet-based model** enhanced with **Squeeze-and-Exc
 The training pipeline automatically downloads CIFAR-10, preprocesses the data, trains the model, and saves the final model in the `./model_save` directory.
 
 ---
+## Repository
+- models.py: ResNet model architechture
+- main.py: File to train and test the mode
+- Python Notebooks: Folder containing .ipynb files
 
+--- 
 ## Prerequisites
 
 Ensure you have **Python 3.6+** installed before running the project.
@@ -41,18 +46,27 @@ This will:
 
 Below is the summary of the key hyperparameters used in training:
 
-| Hyperparameter        | Value            |
-| --------------------- | ---------------- |
-| Optimizer             | SGD + Nesterov   |
-| Initial Learning Rate | 0.1              |
-| LR Scheduler          | Cosine Annealing |
-| Minimum Learning Rate | 0.0001           |
-| Weight Decay          | 0.0005           |
-| Momentum              | 0.9              |
-| Batch Size            | 128              |
-| Number of Epochs      | 200              |
-| SE Block Enabled      | Yes              |
-| Weight Initialization | Kaiming          |
+## 🔧 Hyperparameters
+
+| **Hyperparameter**         | **Value**                      |
+|---------------------------|--------------------------------|
+| ResNet Layers             | 3                              |
+| Block Size                | [4, 4, 3]                      |
+| Squeeze and Excitation    | True                           |
+| Channels (Ci)             | [64, 128, 256]                 |
+| Filter Size (Fi)          | [3, 3, 3]                      |
+| Skip Kernel Size (Ki)     | [1, 1, 1]                      |
+| Average Pool Size (Pi)    | 8                              |
+| Optimizer                 | SGD                            |
+| Nesterov                  | True                           |
+| Lookahead                 | False                          |
+| Momentum                  | 0.9                            |
+| Learning Rate (LR)        | 0.1                            |
+| LR Scheduler              | CosineAnnealing, η_min=0.0001  |
+| Weight Decay              | 0.0005                         |
+| Epochs                    | 100                            |
+| Batch Size                | 128                            |
+| Data Augmentation         | True                           |
 
 ---
 
@@ -83,10 +97,3 @@ The model achieves a **validation accuracy of 95.2%**, demonstrating the effecti
 - Zhang, Michael, et al. 2020. “Lookahead Optimizer: Escape Local Minima and Improve Generalization.” ICML 2020 https://arxiv.org/abs/2006.12007
 - Pereyra, G., et al. 2017. “Regularizing Neural Networks by Penalizing Confident Outputs.” ICLR 2017. https://arxiv.org/abs/1701.06548
 - Kidambi, R., et al. 2018. “On the Convergence of Nesterov’s Accelerated Gradient Method in Stochastic Settings.”ICML 2018.https://arxiv.org/abs/1805.0906
-
----
-
-## License
-
-This project is released under the MIT License.
-
